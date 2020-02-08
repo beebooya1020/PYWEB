@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load staticfiles %}
+    <style>
+        p{
+            text-align:center;=
+        }
+        img{
+            width:400px;
+            height:400px;
+            display:block;
+            margin:auto;
+
+        }
+        .box{
+        width:420px;
+        height:auto;
+        border: 1px solid green;
+        display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="content">
+    {% for post in object_list %}
+    <div class="box">
+        <p>{{ post.title }}</p>
+        <img src="{{ post.image.url }}">
+        <p>{{ post.description }}</p>
+        <p>Creat Date: {{post.create_date}}</p>
+        <p>Modify Date: {{post.modify_date}}</p>
+
+    </div>
+    {% endfor %}
+
+</div>
+</body>
+</html>

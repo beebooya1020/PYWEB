@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+<style>
+    h1{
+    color : gray;
+    text-align : center;
+    }
+    .red{
+    color : red;
+    font-size : 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    }
+    a{
+    text-decoration : none;
+    color : gray;
+    }
+
+
+</style>
+</head>
+<body>
+<div id="content">
+
+    <h1><span class="red">Y</span>ou<span class="red">T</span>ube<span class="red">V</span>ideo <span class="red">L</span>ist</h1>
+    <ul>
+        {% for bookmark in object_list %}
+            <li><a href="{% url 'bookmark_detail' bookmark.id %}">{{ bookmark }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
